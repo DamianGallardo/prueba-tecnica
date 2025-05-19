@@ -1,55 +1,92 @@
-# React + TypeScript + Vite
+# Prueba-tecnica SpaceX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objetivo
 
-Currently, two official plugins are available:
+Desarrollar una aplicación web que consuma la API pública de **SpaceX** para mostrar información sobre lanzamientos espaciales.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+La aplicación incluye las siguientes funcionalidades:
 
-## Expanding the ESLint configuration
+- Visualización de lanzamientos espaciales pasados y futuros.
+- Filtros por año, éxito de lanzamiento y tipo de misión.
+- Mapa interactivo con **Google Maps** para mostrar los sitios de lanzamiento.
+- Posibilidad de guardar lanzamientos como favoritos usando **localStorage**.
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔧 Instalación y ejecución del proyecto
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Este proyecto usa **Vite** como entorno de desarrollo rápido para aplicaciones web modernas.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tecnologias
+⚛️ React (con TypeScript)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🗺️ Google Maps API para la visualización geográfica de los sitios de lanzamiento
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# prueba-tecnica
+🎨 Tailwind CSS para estilos rápidos y responsivos
+
+💾 localStorage para el manejo de favoritos
+
+🧠 Vite como entorno de desarrollo rápido
+
+🧭 Git para el control de versiones
+
+### 🛠️ Requisitos previos
+
+- Node.js v14 o superior
+- npm (v6 o superior) o yarn
+
+### 📦 Instalación de dependencias
+
+npm i
+
+### 📦 Correr Proyecto
+
+npm run dev
+
+### Archivos y variables de entorno importates para Key y Api .env
+
+Para utilizar la API de SpaceX y Google Maps, crea un archivo .env en la raíz del proyecto con las siguientes variables:
+
+VITE_API_BASE_URL
+VITE_API_KEY_GOOGLE_MAPS
+
+## 📁 Estructura del proyecto
+
+prueba-tecnica/
+│
+├── public/                       
+│   └── spacex-logo.svg
+│
+├── src/
+│   ├── assets/                   
+│   │   └── spacex-logo.png
+│
+│   ├── components/              
+│   │   ├── ui/
+|   |   |    └──CardContainer.tsx
+|   |   |    └──CardItem.tsx
+|   |   |    └──Pagination.tsx
+|   |   |    └──SearchBar.tsx
+│   │   ├── LaunchDetails.tsx
+│   │   └── LaunchFavorite.tsx
+│   │   └── DashboardLayout.tsx
+│   │   └── Navbar.tsx
+│
+│   ├── hooks/                   # Custom hooks
+│   │   └── useApi.t
+│   |
+│   ├── utils/                   # Funciones auxiliares y helpers
+│   │   └── 
+|   |
+│   ├── pages/                   # Vista de Paginas
+│   │   └──dashboard.tsx
+│   |
+│   |
+│   ├── App.tsx                  # Componente raíz de la aplicación
+│   ├── main.tsx                 # Configuración de rutas
+│   └── index.css                # Tailwind import
+│
+├── .env                         # Variables de entorno
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
