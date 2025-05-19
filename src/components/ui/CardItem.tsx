@@ -40,18 +40,28 @@ const CardItem: React.FC<CardItemProps> = ({
     navigate(`/dashboard/${flight_number}`);
   };
 
+  const handleCardClick = () => {
+    if (onClick) {
+      onClick();
+    } else {
+      navigate(`/dashboard/${flight_number}`);
+    }
+  };
+
   return (
     <div
       className="w-full h-full flex flex-col border rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
-      onClick={onClick}
       key={flight_number}
     >
       {(mission_patch || links?.mission_patch) && (
-        <div className="w-full h-full overflow-hidden">
+        <div className="w-full h-full overflow-hidden"
+          onClick={handleCardClick}
+        >
           <img
             src={mission_patch || links?.mission_patch}
             alt={`${mission_name} - ${rocket_name}`}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
           />
         </div>
       )}

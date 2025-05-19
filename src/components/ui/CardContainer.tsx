@@ -81,15 +81,19 @@ const handleSearch = () => {
   return (
     <div className={className}>
       
-      <div className="mb-6">
-        <SearchBar
-          value={searchValue}
-          onChange={setSearchValue}
-          onSearch={handleSearch}
-          placeholder="Buscar por título o contenido..."
-        />
-      </div>
-
+   <div className="mb-6">
+  <SearchBar
+    value={searchValue}
+    onChange={setSearchValue}
+    onSearch={handleSearch}
+    placeholder="Buscar por título o contenido..."
+  />
+  {searchMessage && (
+    <p className="text-center text-sm text-muted-foreground mt-2">
+      {searchMessage}
+    </p>
+  )}
+</div>
       {currentItems.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {currentItems.map((item) => (

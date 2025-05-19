@@ -92,15 +92,15 @@ const LaunchDetails = () => {
           </p>
           <div className="flex mt-4 w-full justify-center md:justify-start">
             <iframe
-              width="100%"
-              height="200"
+              width="600"
+              height="500"
               frameBorder="0"
-              style={{ border: 0, maxWidth: 350 }}
               referrerPolicy="no-referrer-when-downgrade"
               src={`https://www.google.com/maps/embed/v1/place?key=${apiMap}&q=${launch.launch_site?.site_name_long || ""}`}
               allowFullScreen
               title="Google Maps"
-              className="rounded shadow-md"
+              className="rounded shadow-md transition-transform duration-300 hover:scale-105"
+              loading="lazy"
             ></iframe>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full">
