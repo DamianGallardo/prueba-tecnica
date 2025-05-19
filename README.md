@@ -51,36 +51,36 @@ VITE_API_KEY_GOOGLE_MAPS
 
 ## 📁 Estructura del proyecto
 
+```
 prueba-tecnica/
 │
-├── public/                       
+├── public/
 │   └── spacex-logo.svg
 │
 ├── src/
-│   ├── assets/                   
+│   ├── assets/
 │   │   └── spacex-logo.png
-│
-│   ├── components/              
+│   │
+│   ├── components/
 │   │   ├── ui/
-|   |   |    └──CardContainer.tsx
-|   |   |    └──CardItem.tsx
-|   |   |    └──Pagination.tsx
-|   |   |    └──SearchBar.tsx
+│   │   │   ├── CardContainer.tsx
+│   │   │   ├── CardItem.tsx
+│   │   │   ├── Pagination.tsx
+│   │   │   └── SearchBar.tsx
 │   │   ├── LaunchDetails.tsx
-│   │   └── LaunchFavorite.tsx
-│   │   └── DashboardLayout.tsx
+│   │   ├── LaunchFavorite.tsx
+│   │   ├── DashboardLayout.tsx
 │   │   └── Navbar.tsx
-│
+│   │
 │   ├── hooks/                   # Custom hooks
-│   │   └── useApi.t
-│   |
+│   │   └── useApi.ts
+│   │
 │   ├── utils/                   # Funciones auxiliares y helpers
-│   │   └── 
-|   |
-│   ├── pages/                   # Vista de Paginas
-│   │   └──dashboard.tsx
-│   |
-│   |
+│   │   └──
+│   │
+│   ├── pages/                   # Vista de páginas
+│   │   └── dashboard.tsx
+│   │
 │   ├── App.tsx                  # Componente raíz de la aplicación
 │   ├── main.tsx                 # Configuración de rutas
 │   └── index.css                # Tailwind import
@@ -90,3 +90,4 @@ prueba-tecnica/
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
+```
